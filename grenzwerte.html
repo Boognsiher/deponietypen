@@ -110,49 +110,63 @@
       <span class="unit-tag">Einheit: mg/kg Trockensubstanz (TS)</span>
     </div>
 
+    <div class="table-controls">
+      <div class="control-group">
+        <span class="control-label">Spalten anzeigen <span class="small muted">(max. 2, zum Vergleichen)</span></span>
+        <div class="chip-toggle" id="typ-toggle" role="group" aria-label="Deponietyp-Spalten auswählen">
+          <button type="button" class="chip active" data-col="aushub-u">Aushub unbelastet</button>
+          <button type="button" class="chip" data-col="aushub-t">Aushub schwach belastet</button>
+          <button type="button" class="chip active" data-col="typ-b">Typ B</button>
+          <button type="button" class="chip" data-col="typ-c">Typ C</button>
+          <button type="button" class="chip" data-col="typ-d">Typ D</button>
+          <button type="button" class="chip" data-col="typ-e">Typ E</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <span class="control-label">Stoffnamen</span>
+        <button type="button" class="switch" id="abbr-toggle" aria-pressed="false">
+          <span class="switch-opt switch-opt-off">Volltext</span>
+          <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+          <span class="switch-opt switch-opt-on">Abkürzung</span>
+        </button>
+      </div>
+    </div>
+
     <div class="matrix-scroll">
-      <table class="matrix">
+      <table class="matrix" id="matrix-table">
         <caption>Gesamtgehalte in mg/kg Trockensubstanz (TS), sofern nicht anders vermerkt</caption>
         <thead>
-          <tr class="group-row">
-            <th class="stoff-head"></th>
-            <th colspan="2" class="head-aushub">Aushub – Anh. 3</th>
-            <th class="head-b">Anh. 5</th>
-            <th class="head-c">Anh. 5</th>
-            <th class="head-d">Anh. 5</th>
-            <th class="head-e">Anh. 5</th>
-          </tr>
           <tr class="col-row">
             <th class="stoff-head">Stoff <span class="small muted">(mg/kg TS)</span></th>
-            <th class="head-aushub">unbelastet<br><span class="small muted">Ziff. 1</span></th>
-            <th class="head-aushub">schwach belastet<br><span class="small muted">Ziff. 2</span></th>
-            <th class="head-b">Typ B<br><span class="small muted">Ziff. 2.3</span></th>
-            <th class="head-c">Typ C<br><span class="small muted">Ziff. 3.4*</span></th>
-            <th class="head-d">Typ D<br><span class="small muted">Ziff. 4.4</span></th>
-            <th class="head-e">Typ E<br><span class="small muted">Ziff. 5.2</span></th>
+            <th class="head-aushub" data-col="aushub-u">Aushub<br>unbelastet<br><span class="small muted">Anh. 3 Ziff. 1</span></th>
+            <th class="head-aushub" data-col="aushub-t">Aushub<br>schwach belastet<br><span class="small muted">Anh. 3 Ziff. 2</span></th>
+            <th class="head-b" data-col="typ-b">Typ B<br><span class="small muted">Anh. 5 Ziff. 2.3</span></th>
+            <th class="head-c" data-col="typ-c">Typ C<br><span class="small muted">Anh. 5 Ziff. 3.4*</span></th>
+            <th class="head-d" data-col="typ-d">Typ D<br><span class="small muted">Anh. 5 Ziff. 4.4</span></th>
+            <th class="head-e" data-col="typ-e">Typ E<br><span class="small muted">Anh. 5 Ziff. 5.2</span></th>
           </tr>
         </thead>
         <tbody>
-          <tr><th>Antimon</th><td class="cell-aushub">3</td><td class="cell-aushub">15</td><td class="cell-b">30</td><td class="cell-c na">–</td><td class="cell-d">50</td><td class="cell-e">50</td></tr>
-          <tr><th>Arsen</th><td class="cell-aushub">15</td><td class="cell-aushub">15</td><td class="cell-b">30</td><td class="cell-c na">–</td><td class="cell-d">50</td><td class="cell-e">50</td></tr>
-          <tr><th>Blei</th><td class="cell-aushub">50</td><td class="cell-aushub">250</td><td class="cell-b">500</td><td class="cell-c na">–</td><td class="cell-d">2 000</td><td class="cell-e">2 000</td></tr>
-          <tr><th>Cadmium</th><td class="cell-aushub">1</td><td class="cell-aushub">5</td><td class="cell-b">10</td><td class="cell-c na">–</td><td class="cell-d">10</td><td class="cell-e">10</td></tr>
-          <tr><th>Chrom gesamt</th><td class="cell-aushub">50</td><td class="cell-aushub">250</td><td class="cell-b">500</td><td class="cell-c na">–</td><td class="cell-d">1 000</td><td class="cell-e">1 000</td></tr>
-          <tr><th>Chrom (VI)</th><td class="cell-aushub">0,05</td><td class="cell-aushub">0,05</td><td class="cell-b">0,1</td><td class="cell-c na">–</td><td class="cell-d">0,5</td><td class="cell-e">0,5</td></tr>
-          <tr><th>Kupfer</th><td class="cell-aushub">40</td><td class="cell-aushub">250</td><td class="cell-b">500</td><td class="cell-c na">–</td><td class="cell-d">5 000</td><td class="cell-e">5 000</td></tr>
-          <tr><th>Nickel</th><td class="cell-aushub">50</td><td class="cell-aushub">250</td><td class="cell-b">500</td><td class="cell-c na">–</td><td class="cell-d">1 000</td><td class="cell-e">1 000</td></tr>
-          <tr><th>Quecksilber</th><td class="cell-aushub">0,5</td><td class="cell-aushub">1</td><td class="cell-b">2</td><td class="cell-c">≤ 5<sup>†</sup></td><td class="cell-d">5</td><td class="cell-e">5</td></tr>
-          <tr><th>Zink</th><td class="cell-aushub">150</td><td class="cell-aushub">500</td><td class="cell-b">1 000</td><td class="cell-c na">–</td><td class="cell-d">5 000</td><td class="cell-e">5 000</td></tr>
-          <tr><th>Cyanid gesamt</th><td class="cell-aushub">0,5</td><td class="cell-aushub na">–</td><td class="cell-b na">–</td><td class="cell-c na">–</td><td class="cell-d na">–</td><td class="cell-e na">–</td></tr>
-          <tr><th>LCKW (Σ7)</th><td class="cell-aushub">0,1</td><td class="cell-aushub">0,5</td><td class="cell-b">1</td><td class="cell-c">1</td><td class="cell-d">1</td><td class="cell-e">5</td></tr>
-          <tr><th>PCB (Σ6)</th><td class="cell-aushub">0,1</td><td class="cell-aushub">0,5</td><td class="cell-b">1</td><td class="cell-c">1</td><td class="cell-d">1</td><td class="cell-e">10</td></tr>
-          <tr><th>Aliphat. KW C5–C10</th><td class="cell-aushub">1</td><td class="cell-aushub">5</td><td class="cell-b">10</td><td class="cell-c">10</td><td class="cell-d">10</td><td class="cell-e">100</td></tr>
-          <tr><th>Aliphat. KW C10–C40</th><td class="cell-aushub">50</td><td class="cell-aushub">250</td><td class="cell-b">500</td><td class="cell-c">500</td><td class="cell-d">500</td><td class="cell-e">5 000</td></tr>
-          <tr><th>BTEX (Σ6)</th><td class="cell-aushub">1</td><td class="cell-aushub">5</td><td class="cell-b">10</td><td class="cell-c">10</td><td class="cell-d">10</td><td class="cell-e">100</td></tr>
-          <tr><th>Benzol</th><td class="cell-aushub">0,1</td><td class="cell-aushub">0,5</td><td class="cell-b">1</td><td class="cell-c">1</td><td class="cell-d">1</td><td class="cell-e">1</td></tr>
-          <tr><th>PAK (Σ16 EPA)</th><td class="cell-aushub">3</td><td class="cell-aushub">12,5</td><td class="cell-b">25</td><td class="cell-c">25</td><td class="cell-d">25</td><td class="cell-e">250</td></tr>
-          <tr><th>Benzo[a]pyren</th><td class="cell-aushub">0,3</td><td class="cell-aushub">1,5</td><td class="cell-b">3</td><td class="cell-c">3</td><td class="cell-d">3</td><td class="cell-e">10</td></tr>
-          <tr><th>TOC400</th><td class="cell-aushub na">–</td><td class="cell-aushub">10 000</td><td class="cell-b">20 000</td><td class="cell-c">20 000</td><td class="cell-d">20 000</td><td class="cell-e">50 000</td></tr>
+          <tr><th><span class="name-full">Antimon</span><span class="name-abbr">Sb</span></th><td class="cell-aushub" data-col="aushub-u">3</td><td class="cell-aushub" data-col="aushub-t">15</td><td class="cell-b" data-col="typ-b">30</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">50</td><td class="cell-e" data-col="typ-e">50</td></tr>
+          <tr><th><span class="name-full">Arsen</span><span class="name-abbr">As</span></th><td class="cell-aushub" data-col="aushub-u">15</td><td class="cell-aushub" data-col="aushub-t">15</td><td class="cell-b" data-col="typ-b">30</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">50</td><td class="cell-e" data-col="typ-e">50</td></tr>
+          <tr><th><span class="name-full">Blei</span><span class="name-abbr">Pb</span></th><td class="cell-aushub" data-col="aushub-u">50</td><td class="cell-aushub" data-col="aushub-t">250</td><td class="cell-b" data-col="typ-b">500</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">2 000</td><td class="cell-e" data-col="typ-e">2 000</td></tr>
+          <tr><th><span class="name-full">Cadmium</span><span class="name-abbr">Cd</span></th><td class="cell-aushub" data-col="aushub-u">1</td><td class="cell-aushub" data-col="aushub-t">5</td><td class="cell-b" data-col="typ-b">10</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">10</td><td class="cell-e" data-col="typ-e">10</td></tr>
+          <tr><th><span class="name-full">Chrom gesamt</span><span class="name-abbr">Cr ges.</span></th><td class="cell-aushub" data-col="aushub-u">50</td><td class="cell-aushub" data-col="aushub-t">250</td><td class="cell-b" data-col="typ-b">500</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">1 000</td><td class="cell-e" data-col="typ-e">1 000</td></tr>
+          <tr><th><span class="name-full">Chrom (VI)</span><span class="name-abbr">Cr(VI)</span></th><td class="cell-aushub" data-col="aushub-u">0,05</td><td class="cell-aushub" data-col="aushub-t">0,05</td><td class="cell-b" data-col="typ-b">0,1</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">0,5</td><td class="cell-e" data-col="typ-e">0,5</td></tr>
+          <tr><th><span class="name-full">Kupfer</span><span class="name-abbr">Cu</span></th><td class="cell-aushub" data-col="aushub-u">40</td><td class="cell-aushub" data-col="aushub-t">250</td><td class="cell-b" data-col="typ-b">500</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">5 000</td><td class="cell-e" data-col="typ-e">5 000</td></tr>
+          <tr><th><span class="name-full">Nickel</span><span class="name-abbr">Ni</span></th><td class="cell-aushub" data-col="aushub-u">50</td><td class="cell-aushub" data-col="aushub-t">250</td><td class="cell-b" data-col="typ-b">500</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">1 000</td><td class="cell-e" data-col="typ-e">1 000</td></tr>
+          <tr><th><span class="name-full">Quecksilber</span><span class="name-abbr">Hg</span></th><td class="cell-aushub" data-col="aushub-u">0,5</td><td class="cell-aushub" data-col="aushub-t">1</td><td class="cell-b" data-col="typ-b">2</td><td class="cell-c" data-col="typ-c">≤ 5<sup>†</sup></td><td class="cell-d" data-col="typ-d">5</td><td class="cell-e" data-col="typ-e">5</td></tr>
+          <tr><th><span class="name-full">Zink</span><span class="name-abbr">Zn</span></th><td class="cell-aushub" data-col="aushub-u">150</td><td class="cell-aushub" data-col="aushub-t">500</td><td class="cell-b" data-col="typ-b">1 000</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d" data-col="typ-d">5 000</td><td class="cell-e" data-col="typ-e">5 000</td></tr>
+          <tr><th><span class="name-full">Cyanid gesamt</span><span class="name-abbr">CN⁻ ges.</span></th><td class="cell-aushub" data-col="aushub-u">0,5</td><td class="cell-aushub na" data-col="aushub-t">–</td><td class="cell-b na" data-col="typ-b">–</td><td class="cell-c na" data-col="typ-c">–</td><td class="cell-d na" data-col="typ-d">–</td><td class="cell-e na" data-col="typ-e">–</td></tr>
+          <tr><th><span class="name-full">Leichtflüchtige Chlorkohlenwasserstoffe</span><span class="name-abbr">LCKW (Σ7)</span></th><td class="cell-aushub" data-col="aushub-u">0,1</td><td class="cell-aushub" data-col="aushub-t">0,5</td><td class="cell-b" data-col="typ-b">1</td><td class="cell-c" data-col="typ-c">1</td><td class="cell-d" data-col="typ-d">1</td><td class="cell-e" data-col="typ-e">5</td></tr>
+          <tr><th><span class="name-full">Polychlorierte Biphenyle</span><span class="name-abbr">PCB (Σ6)</span></th><td class="cell-aushub" data-col="aushub-u">0,1</td><td class="cell-aushub" data-col="aushub-t">0,5</td><td class="cell-b" data-col="typ-b">1</td><td class="cell-c" data-col="typ-c">1</td><td class="cell-d" data-col="typ-d">1</td><td class="cell-e" data-col="typ-e">10</td></tr>
+          <tr><th><span class="name-full">Aliphatische Kohlenwasserstoffe C5–C10</span><span class="name-abbr">KW C5–C10</span></th><td class="cell-aushub" data-col="aushub-u">1</td><td class="cell-aushub" data-col="aushub-t">5</td><td class="cell-b" data-col="typ-b">10</td><td class="cell-c" data-col="typ-c">10</td><td class="cell-d" data-col="typ-d">10</td><td class="cell-e" data-col="typ-e">100</td></tr>
+          <tr><th><span class="name-full">Aliphatische Kohlenwasserstoffe C10–C40</span><span class="name-abbr">KW C10–C40</span></th><td class="cell-aushub" data-col="aushub-u">50</td><td class="cell-aushub" data-col="aushub-t">250</td><td class="cell-b" data-col="typ-b">500</td><td class="cell-c" data-col="typ-c">500</td><td class="cell-d" data-col="typ-d">500</td><td class="cell-e" data-col="typ-e">5 000</td></tr>
+          <tr><th><span class="name-full">Monocyclische aromat. Kohlenwasserstoffe</span><span class="name-abbr">BTEX (Σ6)</span></th><td class="cell-aushub" data-col="aushub-u">1</td><td class="cell-aushub" data-col="aushub-t">5</td><td class="cell-b" data-col="typ-b">10</td><td class="cell-c" data-col="typ-c">10</td><td class="cell-d" data-col="typ-d">10</td><td class="cell-e" data-col="typ-e">100</td></tr>
+          <tr><th><span class="name-full">Benzol</span><span class="name-abbr">Benzol</span></th><td class="cell-aushub" data-col="aushub-u">0,1</td><td class="cell-aushub" data-col="aushub-t">0,5</td><td class="cell-b" data-col="typ-b">1</td><td class="cell-c" data-col="typ-c">1</td><td class="cell-d" data-col="typ-d">1</td><td class="cell-e" data-col="typ-e">1</td></tr>
+          <tr><th><span class="name-full">Polycyclische aromat. Kohlenwasserstoffe</span><span class="name-abbr">PAK (Σ16 EPA)</span></th><td class="cell-aushub" data-col="aushub-u">3</td><td class="cell-aushub" data-col="aushub-t">12,5</td><td class="cell-b" data-col="typ-b">25</td><td class="cell-c" data-col="typ-c">25</td><td class="cell-d" data-col="typ-d">25</td><td class="cell-e" data-col="typ-e">250</td></tr>
+          <tr><th><span class="name-full">Benzo[a]pyren</span><span class="name-abbr">BaP</span></th><td class="cell-aushub" data-col="aushub-u">0,3</td><td class="cell-aushub" data-col="aushub-t">1,5</td><td class="cell-b" data-col="typ-b">3</td><td class="cell-c" data-col="typ-c">3</td><td class="cell-d" data-col="typ-d">3</td><td class="cell-e" data-col="typ-e">10</td></tr>
+          <tr><th><span class="name-full">Org. Kohlenstoff bis 400 °C</span><span class="name-abbr">TOC400</span></th><td class="cell-aushub na" data-col="aushub-u">–</td><td class="cell-aushub" data-col="aushub-t">10 000</td><td class="cell-b" data-col="typ-b">20 000</td><td class="cell-c" data-col="typ-c">20 000</td><td class="cell-d" data-col="typ-d">20 000</td><td class="cell-e" data-col="typ-e">50 000</td></tr>
         </tbody>
       </table>
       <div class="legend-note">
@@ -443,5 +457,6 @@
   </div>
 </footer>
 
+<script src="js/table-controls.js" defer></script>
 </body>
 </html>

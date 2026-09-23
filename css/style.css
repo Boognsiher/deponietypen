@@ -441,6 +441,110 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
   border-color: #e2d3ae;
 }
 
+/* Interaktive Tabellensteuerung (Spaltenauswahl, Abkürzungen) */
+
+.table-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+.chip-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover { border-color: var(--brand); }
+
+.chip.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  font-weight: 600;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-soft);
+  padding: 4px 2px;
+}
+
+.switch-opt { transition: color 0.15s ease, font-weight 0.15s ease; }
+.switch[aria-pressed="false"] .switch-opt-off { color: var(--brand-dark); font-weight: 700; }
+.switch[aria-pressed="true"] .switch-opt-on { color: var(--brand-dark); font-weight: 700; }
+
+.switch-track {
+  width: 38px;
+  height: 20px;
+  border-radius: 100px;
+  background: var(--line);
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.switch[aria-pressed="true"] .switch-track { background: var(--brand); }
+
+.switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease;
+}
+
+.switch[aria-pressed="true"] .switch-thumb { transform: translateX(18px); }
+
+/* Abkürzungen: standardmässig Volltext sichtbar */
+table.matrix .name-abbr { display: none; }
+table.matrix.show-abbr .name-full { display: none; }
+table.matrix.show-abbr .name-abbr { display: inline; }
+
+/* Ausgeblendete Spalten wirklich aus dem Layout entfernen (schmälert die Tabelle auf Mobile) */
+table.matrix [hidden] { display: none !important; }
+
 /* Matrix-Tabelle: alle Stoffe x alle Typen, kompakt & farblich unterlegt */
 
 .matrix-scroll {
