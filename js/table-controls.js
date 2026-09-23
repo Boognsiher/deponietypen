@@ -1,6 +1,8 @@
 /*
   Steuerung für die Grenzwerttabelle: Spaltenauswahl (max. 2, zum Vergleichen
   auf schmalen Bildschirmen) und Umschalter Volltext/Abkürzung.
+  Auf Desktop (> 640px) sind immer alle Spalten sichtbar - die Auswahl-Chips
+  sind dort per CSS ausgeblendet und die Spaltenlogik bleibt inaktiv.
   Reines Vanilla-JS, keine Abhängigkeiten. Ohne JS bleibt die Tabelle
   vollständig sichtbar (progressive enhancement).
 */
@@ -13,12 +15,22 @@
 
   var MAX_COLS = 2;
   var order = [];
+  var mq = window.matchMedia("(max-width: 640px)");
 
   function activeChips() {
     return Array.prototype.slice.call(toggle.querySelectorAll(".chip.active"));
   }
 
+  function showAllColumns() {
+    var cells = table.querySelectorAll("[data-col]");
+    for (var i = 0; i < cells.length; i++) cells[i].removeAttribute("hidden");
+  }
+
   function applyColumns() {
+    if (!mq.matches) {
+      showAllColumns();
+      return;
+    }
     var activeCols = activeChips().map(function (b) { return b.dataset.col; });
     var cells = table.querySelectorAll("[data-col]");
     for (var i = 0; i < cells.length; i++) {
@@ -34,6 +46,14 @@
   // Startzustand aus den im HTML als "active" markierten Chips übernehmen
   activeChips().forEach(function (b) { order.push(b.dataset.col); });
   applyColumns();
+
+  // Beim Wechsel über die Bildschirmgrenze (z.B. Fenster verkleinert/vergrössert
+  // oder Gerät gedreht) den Sichtbarkeitszustand neu anwenden
+  if (mq.addEventListener) {
+    mq.addEventListener("change", applyColumns);
+  } else if (mq.addListener) {
+    mq.addListener(applyColumns); // Safari < 14
+  }
 
   toggle.addEventListener("click", function (e) {
     var btn = e.target.closest(".chip");

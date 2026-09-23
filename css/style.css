@@ -831,6 +831,12 @@ footer.site-footer .disclaimer {
   h2 { font-size: 1.3rem; }
 }
 
+/* Spaltenauswahl der Grenzwerttabelle nur auf schmalen Bildschirmen anzeigen
+   – auf Desktop sind ohnehin alle Spalten sichtbar (siehe table-controls.js) */
+@media (min-width: 641px) {
+  .cols-control { display: none; }
+}
+
 /* -------------------- Print -------------------- */
 
 @media print {
