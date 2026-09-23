@@ -77,6 +77,11 @@
 
   var abbrBtn = document.getElementById("abbr-toggle");
   if (abbrBtn) {
+    // Auf Mobile ergibt Abkürzung als Startzustand mehr Sinn (schmalere Stoff-Spalte)
+    if (mq.matches) {
+      abbrBtn.setAttribute("aria-pressed", "true");
+      table.classList.add("show-abbr");
+    }
     abbrBtn.addEventListener("click", function () {
       var pressed = abbrBtn.getAttribute("aria-pressed") === "true";
       abbrBtn.setAttribute("aria-pressed", String(!pressed));

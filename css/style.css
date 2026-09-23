@@ -837,6 +837,31 @@ footer.site-footer .disclaimer {
   .cols-control { display: none; }
 }
 
+/* Grenzwerttabelle auf Mobile: kein erzwungenes min-width mehr (das hielt die
+   Tabelle bisher breit, selbst wenn Spalten ausgeblendet waren), Stoff-Spalte
+   bricht um und bleibt schmal, damit 2 Werte-Spalten ohne Scrollen passen. */
+@media (max-width: 640px) {
+  table, table.matrix { min-width: 0; }
+
+  table.matrix th.stoff-head,
+  table.matrix tbody th {
+    white-space: normal;
+    max-width: 32vw;
+    font-size: 0.74rem;
+    line-height: 1.25;
+    hyphens: auto;
+  }
+
+  table.matrix th, table.matrix td {
+    padding: 5px 6px;
+  }
+
+  table.matrix th[data-col],
+  table.matrix td[data-col] {
+    white-space: nowrap;
+  }
+}
+
 /* -------------------- Print -------------------- */
 
 @media print {
