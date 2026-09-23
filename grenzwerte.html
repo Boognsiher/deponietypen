@@ -30,13 +30,14 @@
       <span class="badge">VVEA</span>
       <span class="badge">VBBo</span>
       <span class="badge">GSchV</span>
+      <span class="badge">PFAS</span>
     </div>
     <h1>Grenzwerttabelle</h1>
     <p class="lead">
       Alle wichtigen Grenz-, Richt-, Prüf- und Sanierungswerte auf einen
       Blick: Aushubmaterial und Deponietypen B–E in einer Matrix
-      nebeneinander, Bodenwerte und Grundwasseranforderungen kompakt
-      darunter.
+      nebeneinander, dazu PFAS-Vollzugswerte, Bodenwerte und
+      Grundwasseranforderungen kompakt darunter.
     </p>
   </div>
 </div>
@@ -46,6 +47,7 @@
   <nav class="jump-nav" aria-label="Sprungnavigation">
     <a href="#matrix">Aushub &amp; Deponietypen (Gesamtgehalte)</a>
     <a href="#eluat">Eluatwerte</a>
+    <a href="#pfas">PFAS</a>
     <a href="#vbbo-boden">Boden (VBBo)</a>
     <a href="#gschv-grundwasser">Grundwasser (GSchV)</a>
   </nav>
@@ -212,6 +214,67 @@
     <div class="legend-note" style="border:1px solid var(--line); border-radius: var(--radius); background: var(--bg-alt); padding: 10px 14px;">
       Weitere Nebenbedingungen: max. löslicher Salzanteil im unbehandelten Abfall –
       Typ B 0,5 Gew.-%, Typ C 3 Gew.-%, Typ E 5 Gew.-%. Dioxine/Furane (PCDD/PCDF) bei Typ C und D je max. 1 µg TEQ/kg.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <section class="block" id="pfas">
+    <h2>PFAS <span class="art-ref">noch nicht in der VVEA geregelt – BAFU-Vollzugshilfe / Einzelfallwerte</span></h2>
+    <div class="callout warn">
+      Für PFAS (per- und polyfluorierte Alkylverbindungen) enthält die VVEA
+      selbst <strong>noch keine Grenzwerte</strong>. Die Behörde legt diese
+      nach Art. 30c/32 USG i.V.m. Anhang 3 Ziff. 3 und Anhang 5 Ziff. 6.2 VVEA
+      im Einzelfall mit Zustimmung des BAFU fest. Die unten aufgeführten
+      Werte sind die vom BAFU den Kantonen zur einheitlichen Anwendung
+      empfohlenen Vollzugswerte – keine Verordnungswerte im formellen Sinn.
+      Eine Aufnahme fester Grenzwerte in die VVEA ist in Vorbereitung
+      (Motion 22.3929 Maret).
+    </div>
+
+    <h3>Abfallgrenzwerte (Summenwert relevanter PFAS, nicht TEQ-gewichtet)</h3>
+    <div class="matrix-scroll">
+      <table class="matrix">
+        <thead>
+          <tr class="col-row">
+            <th class="stoff-head">Wert</th>
+            <th>Bedeutung</th>
+            <th>Grenzwert</th>
+            <th>Rechtsgrundlage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>U-Wert</th><td style="text-align:left; white-space:normal;">Unverschmutztes Aushub-/Ausbruchmaterial</td><td>0,5 µg/kg</td><td>Anh. 3 Ziff. 1 VVEA</td></tr>
+          <tr><th>T-Wert</th><td style="text-align:left; white-space:normal;">Schwach (tolerierbar) verschmutztes Aushubmaterial – bedingte Verwertung nach Art. 19 Abs. 2 VVEA möglich, ausser bituminös gebundene Baustoffe</td><td>1,5 µg/kg</td><td>Anh. 3 Ziff. 2 VVEA</td></tr>
+          <tr><th>B-Wert</th><td style="text-align:left; white-space:normal;">Material zur Ablagerung auf Deponien des Typs B</td><td>2,5 µg/kg</td><td>Anh. 5 Ziff. 2.3 VVEA</td></tr>
+          <tr><th>E-Wert</th><td style="text-align:left; white-space:normal;">Material zur Ablagerung auf Deponien des Typs E</td><td>5,0 µg/kg</td><td>Anh. 5 Ziff. 5.2 VVEA</td></tr>
+        </tbody>
+      </table>
+      <div class="legend-note">Für die Deponietypen A, C und D bestehen aktuell keine publizierten PFAS-Vollzugswerte. Ablagerung jeweils «gemäss kantonalen Vorgaben» im Einzelfall.</div>
+    </div>
+
+    <h3>Einstufung als gefährlicher Abfall (Eigenschaft H13)</h3>
+    <div class="matrix-scroll">
+      <table>
+        <thead><tr><th>Abfallart</th><th class="num">Schwellenwert</th></tr></thead>
+        <tbody>
+          <tr><th>Feste, pastöse, schlammförmige Abfälle</th><td class="num">5 µg/kg (Summenwert, ungewichtet)</td></tr>
+          <tr><th>Wässrige Abfälle</th><td class="num">200 ng TEQ/L (toxizitätsgewichteter Summenwert)</td></tr>
+        </tbody>
+      </table>
+      <div class="legend-note">Orientiert sich am E-Wert (5 µg/kg) bzw. B-Wert (2,5 µg/kg), da die AltlV selbst keinen Konzentrationswert für PFAS festlegt.</div>
+    </div>
+
+    <h3>Analytik</h3>
+    <div class="legend-note" style="border:1px solid var(--line); border-radius: var(--radius); background: var(--bg-alt); padding: 10px 14px;">
+      <strong>16 PFAS-Einzelverbindungen</strong> sind mindestens ins
+      Analytik-Programm aufzunehmen: PFBA, PFPeA, PFHxA, PFHpA, PFOA, PFNA,
+      PFDA, PFUnDA, PFBS, PFHxS, PFOS, Capstone A, Capstone B, 6:2-FTS,
+      PFOSA, EtFOSAA. Erforderliche Bestimmungsgrenzen: <strong>0,1 µg/kg</strong>
+      im Feststoff (Boden/Abfall), <strong>1 ng/L</strong> im Wasser
+      (Grundwasser/Oberflächengewässer). Für die Abgrenzung von
+      Altlasten-Perimetern (nicht mit VBBo-Werten zu verwechseln) gelten als
+      Abklärungswerte: Boden ≥ 5 µg/kg, Untergrund ≥ 0,5 µg/kg (Summenwert,
+      ungewichtet).
     </div>
   </section>
 
