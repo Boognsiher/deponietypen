@@ -77,10 +77,15 @@ header.site-header .wrap {
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   text-decoration: none;
   color: #fff;
+}
+
+.brand-logo {
+  display: block;
+  flex-shrink: 0;
 }
 
 .brand strong {
@@ -130,7 +135,7 @@ nav.main-nav a.cta:hover {
 .hero {
   background: linear-gradient(180deg, var(--brand-tint), var(--bg) 90%);
   border-bottom: 1px solid var(--line);
-  padding: 48px 0 40px;
+  padding: 48px 0 56px;
 }
 
 .hero h1 {
@@ -169,7 +174,7 @@ nav.main-nav a.cta:hover {
 /* -------------------- Main content -------------------- */
 
 main {
-  padding: 40px 0 20px;
+  padding: 56px 0 20px;
 }
 
 section.block {
