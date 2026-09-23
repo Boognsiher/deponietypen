@@ -135,7 +135,7 @@ nav.main-nav a.cta:hover {
 .hero {
   background: linear-gradient(180deg, var(--brand-tint), var(--bg) 90%);
   border-bottom: 1px solid var(--line);
-  padding: 48px 0 56px;
+  padding: 48px 0 64px;
 }
 
 .hero h1 {
@@ -174,7 +174,7 @@ nav.main-nav a.cta:hover {
 /* -------------------- Main content -------------------- */
 
 main {
-  padding: 56px 0 20px;
+  padding: 80px 0 20px;
 }
 
 section.block {
