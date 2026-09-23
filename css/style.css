@@ -1,0 +1,480 @@
+/* ===========================================================
+   Deponietypen & Grenzwerte – nüchterne Infowebsite
+   =========================================================== */
+
+/*
+  Farbschema und Typografie bewusst an probenjournal.ch angeglichen
+  (Moosgrün als Marke, Terrakotta als Akzent, warmes Off-White statt
+  reinem Weiss, Serife für Überschriften) — diese Seite ist die
+  Detailquelle/„Anflugschneise“ zu Probenjournal, kein Fremdkörper.
+*/
+
+:root {
+  --bg: #f7f5f0;
+  --bg-alt: #ffffff;
+  --ink: #1f2620;
+  --ink-soft: #4b5249;
+  --line: #ddd7c8;
+  --brand: #2e4034;
+  --brand-dark: #1c2921;
+  --brand-tint: #e7e9e2;
+  --accent: #c4622d;
+  --accent-tint: #f7e6da;
+  --typ-a: #6b8f57;
+  --typ-b: #5b8f88;
+  --typ-c: #8a7a3b;
+  --typ-d: #a15a3b;
+  --typ-e: #7a5b8a;
+  --radius: 4px;
+  --maxw: 1080px;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  line-height: 1.55;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* -------------------- Header / Nav -------------------- */
+
+header.site-header {
+  background: var(--brand-dark);
+  color: #fff;
+  border-bottom: 4px solid var(--accent);
+}
+
+header.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.brand strong {
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+.brand span.sub {
+  font-size: 0.8rem;
+  color: #cfd8c9;
+  font-weight: 400;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+nav.main-nav a {
+  color: #e8ece3;
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  transition: background 0.15s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a[aria-current="page"] {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+nav.main-nav a.cta {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+nav.main-nav a.cta:hover {
+  background: #a3823f;
+}
+
+/* -------------------- Hero -------------------- */
+
+.hero {
+  background: linear-gradient(180deg, var(--brand-tint), var(--bg) 90%);
+  border-bottom: 1px solid var(--line);
+  padding: 48px 0 40px;
+}
+
+.hero h1 {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  margin: 0 0 14px;
+  color: var(--brand-dark);
+  line-height: 1.2;
+}
+
+.hero p.lead {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin: 0 0 22px;
+}
+
+.hero .badge-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+  border: 1px solid var(--line);
+}
+
+/* -------------------- Main content -------------------- */
+
+main {
+  padding: 40px 0 20px;
+}
+
+section.block {
+  margin-bottom: 46px;
+}
+
+h2, h3, h4 {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+}
+
+h2 {
+  font-size: 1.55rem;
+  color: var(--brand-dark);
+  border-bottom: 2px solid var(--brand-tint);
+  padding-bottom: 8px;
+  margin: 0 0 18px;
+}
+
+h2 .art-ref {
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--ink-soft);
+  display: block;
+  margin-top: 2px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 26px 0 10px;
+}
+
+h4 {
+  font-size: 1rem;
+  color: var(--ink);
+  margin: 18px 0 8px;
+}
+
+p { margin: 0 0 14px; }
+
+a { color: var(--brand); }
+a:hover { color: var(--brand-dark); }
+
+ul, ol {
+  margin: 0 0 14px;
+  padding-left: 1.3em;
+}
+li { margin-bottom: 5px; }
+
+.muted { color: var(--ink-soft); }
+.small { font-size: 0.86rem; }
+
+/* -------------------- Cards (Deponietypen Übersicht) -------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.type-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.type-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+.type-card .type-letter {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.type-card p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.type-card[data-typ="A"] { border-left-color: var(--typ-a); }
+.type-card[data-typ="B"] { border-left-color: var(--typ-b); }
+.type-card[data-typ="C"] { border-left-color: var(--typ-c); }
+.type-card[data-typ="D"] { border-left-color: var(--typ-d); }
+.type-card[data-typ="E"] { border-left-color: var(--typ-e); }
+
+/* -------------------- Deponietyp detail sections -------------------- */
+
+.typ-section {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 24px;
+  border-top: 5px solid var(--brand);
+}
+
+.typ-section[data-typ="A"] { border-top-color: var(--typ-a); }
+.typ-section[data-typ="B"] { border-top-color: var(--typ-b); }
+.typ-section[data-typ="C"] { border-top-color: var(--typ-c); }
+.typ-section[data-typ="D"] { border-top-color: var(--typ-d); }
+.typ-section[data-typ="E"] { border-top-color: var(--typ-e); }
+
+.typ-section .typ-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.typ-section .typ-head h2 { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+
+.typ-meta {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  background: var(--brand-tint);
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.former-name {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  font-style: italic;
+}
+
+/* -------------------- Tables -------------------- */
+
+.table-scroll {
+  overflow-x: auto;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 480px;
+}
+
+table caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 10px 14px 0;
+  color: var(--brand-dark);
+}
+
+thead th {
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 2px solid var(--line);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tbody td, tbody th {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+tbody th { text-align: left; font-weight: 500; }
+
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+
+tbody tr:nth-child(even) { background: #fbfaf7; }
+
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.legend-note {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* -------------------- CTA boxes -------------------- */
+
+.cta-box {
+  background: var(--accent-tint);
+  border: 1px solid #e2d3ae;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-box h3 {
+  margin: 0 0 4px;
+  color: var(--brand-dark);
+}
+
+.cta-box p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; max-width: 520px; }
+
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.btn:hover { background: var(--brand-dark); }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  border: 1.5px solid var(--brand);
+  color: var(--brand) !important;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+}
+
+.btn-outline:hover { background: var(--brand-tint); }
+
+/* -------------------- Info / warning callouts -------------------- */
+
+.callout {
+  border-left: 4px solid var(--brand);
+  background: var(--brand-tint);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 0 0 18px;
+  font-size: 0.92rem;
+}
+
+.callout.warn {
+  border-left-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+/* -------------------- Footer -------------------- */
+
+footer.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--brand-dark);
+  color: #cfd8c9;
+  padding: 30px 0 26px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+footer.site-footer a { color: #e8ece3; }
+footer.site-footer a:hover { color: #fff; }
+
+footer.site-footer .foot-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+footer.site-footer .foot-col { max-width: 420px; }
+
+footer.site-footer h4 {
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+
+footer.site-footer .disclaimer {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+  color: #a9b39f;
+  font-size: 0.78rem;
+}
+
+/* -------------------- Responsive -------------------- */
+
+@media (max-width: 640px) {
+  nav.main-nav { width: 100%; justify-content: flex-start; }
+  .cta-box { flex-direction: column; align-items: flex-start; }
+  h2 { font-size: 1.3rem; }
+}
+
+/* -------------------- Print -------------------- */
+
+@media print {
+  header.site-header, footer.site-footer, .cta-box, nav.main-nav { display: none; }
+  body { background: #fff; }
+}
