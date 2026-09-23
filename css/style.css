@@ -27,6 +27,12 @@
   --typ-e: #7a5b8a;
   --radius: 4px;
   --maxw: 1080px;
+  --maxw-wide: 1300px;
+  --typ-a-tint: #e9f0e4;
+  --typ-b-tint: #e3eeec;
+  --typ-c-tint: #f0ecdd;
+  --typ-d-tint: #f3e4da;
+  --typ-e-tint: #ebe3ee;
   font-size: 16px;
 }
 
@@ -360,6 +366,211 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
   padding: 10px 14px;
   border-top: 1px solid var(--line);
 }
+
+/* -------------------- Wide sections (Grenzwerttabelle) -------------------- */
+
+.wrap.wide { max-width: var(--maxw-wide); }
+
+/* In-page Sprungnavigation */
+
+.jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 26px;
+}
+
+.jump-nav a {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  padding: 6px 13px;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.jump-nav a:hover { background: var(--brand-tint); }
+
+/* Farblegende Deponietypen */
+
+.typ-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 0.78rem;
+}
+
+.typ-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 6px;
+  border-radius: 100px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+
+.typ-legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.typ-legend .dot.a { background: var(--typ-a); }
+.typ-legend .dot.b { background: var(--typ-b); }
+.typ-legend .dot.c { background: var(--typ-c); }
+.typ-legend .dot.d { background: var(--typ-d); }
+.typ-legend .dot.e { background: var(--typ-e); }
+
+/* Matrix-Tabelle: alle Stoffe x alle Typen, kompakt & farblich unterlegt */
+
+.matrix-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  margin-bottom: 10px;
+}
+
+table.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 760px;
+}
+
+table.matrix caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 12px 14px 4px;
+  color: var(--brand-dark);
+  font-size: 0.95rem;
+}
+
+table.matrix th, table.matrix td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+table.matrix thead tr.group-row th {
+  text-align: center;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  background: var(--bg-alt);
+  border-bottom: none;
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
+table.matrix thead tr.col-row th {
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+
+table.matrix thead tr.col-row th.stoff-head,
+table.matrix thead tr.group-row th.stoff-head {
+  text-align: left;
+}
+
+table.matrix tbody th {
+  text-align: left;
+  font-weight: 500;
+  position: sticky;
+  left: 0;
+  background: var(--bg-alt);
+  z-index: 1;
+  box-shadow: 1px 0 0 var(--line);
+}
+
+table.matrix tbody tr:nth-child(even) th,
+table.matrix tbody tr:nth-child(even) td.plain { background: #fbfaf7; }
+
+table.matrix td { text-align: center; font-variant-numeric: tabular-nums; }
+
+table.matrix td.na { color: var(--ink-soft); font-style: italic; }
+
+/* Farbige Spaltengruppen */
+
+col.col-aushub { background: transparent; }
+th.head-aushub, td.cell-aushub { background: #f3f1e9; }
+th.head-b, td.cell-b { background: var(--typ-b-tint); }
+th.head-c, td.cell-c { background: var(--typ-c-tint); }
+th.head-d, td.cell-d { background: var(--typ-d-tint); }
+th.head-e, td.cell-e { background: var(--typ-e-tint); }
+
+table.matrix tbody tr:nth-child(even) td.cell-b { background: #dbe9e6; }
+table.matrix tbody tr:nth-child(even) td.cell-c { background: #e8e2cd; }
+table.matrix tbody tr:nth-child(even) td.cell-d { background: #ecd8ca; }
+table.matrix tbody tr:nth-child(even) td.cell-e { background: #e2d5e7; }
+table.matrix tbody tr:nth-child(even) td.cell-aushub { background: #ebe8dc; }
+
+/* Kompaktes Kartenraster für kleinere Nebentabellen (Eluatwerte etc.) */
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.mini-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.mini-card[data-typ="B"] { border-top-color: var(--typ-b); }
+.mini-card[data-typ="C"] { border-top-color: var(--typ-c); }
+.mini-card[data-typ="D"] { border-top-color: var(--typ-d); }
+.mini-card[data-typ="E"] { border-top-color: var(--typ-e); }
+.mini-card[data-typ="Boden"] { border-top-color: var(--brand); }
+.mini-card[data-typ="Wasser"] { border-top-color: var(--accent); }
+
+.mini-card h4 {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+}
+
+.mini-card table {
+  width: 100%;
+  font-size: 0.8rem;
+  min-width: 0;
+}
+
+.mini-card td, .mini-card th { padding: 4px 6px; white-space: normal; }
+
+/* Details/Legende zum Aufklappen statt Wiederholung pro Tabelle */
+
+details.legend-details {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-bottom: 26px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+details.legend-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+details.legend-details ul { margin: 10px 0 0; }
 
 /* -------------------- CTA boxes -------------------- */
 
