@@ -110,10 +110,10 @@
       <span class="unit-tag">Einheit: mg/kg Trockensubstanz (TS)</span>
     </div>
 
-    <div class="table-controls">
+    <div class="table-controls" data-target="matrix-table">
       <div class="control-group cols-control">
         <span class="control-label">Spalten anzeigen <span class="small muted">(max. 2, zum Vergleichen)</span></span>
-        <div class="chip-toggle" id="typ-toggle" role="group" aria-label="Deponietyp-Spalten auswählen">
+        <div class="chip-toggle" role="group" aria-label="Deponietyp-Spalten auswählen">
           <button type="button" class="chip active" data-col="aushub-u">Aushub unbelastet</button>
           <button type="button" class="chip" data-col="aushub-t">Aushub schwach belastet</button>
           <button type="button" class="chip active" data-col="typ-b">Typ B</button>
@@ -281,14 +281,13 @@
             <th class="stoff-head">Wert</th>
             <th>Bedeutung</th>
             <th>Grenzwert</th>
-            <th>Rechtsgrundlage</th>
           </tr>
         </thead>
         <tbody>
-          <tr><th>U-Wert</th><td style="text-align:left; white-space:normal;">Unverschmutztes Aushub-/Ausbruchmaterial</td><td>0,5 µg/kg</td><td>Anh. 3 Ziff. 1 VVEA</td></tr>
-          <tr><th>T-Wert</th><td style="text-align:left; white-space:normal;">Schwach (tolerierbar) verschmutztes Aushubmaterial – bedingte Verwertung nach Art. 19 Abs. 2 VVEA möglich, ausser bituminös gebundene Baustoffe</td><td>1,5 µg/kg</td><td>Anh. 3 Ziff. 2 VVEA</td></tr>
-          <tr><th>B-Wert</th><td style="text-align:left; white-space:normal;">Material zur Ablagerung auf Deponien des Typs B</td><td>2,5 µg/kg</td><td>Anh. 5 Ziff. 2.3 VVEA</td></tr>
-          <tr><th>E-Wert</th><td style="text-align:left; white-space:normal;">Material zur Ablagerung auf Deponien des Typs E</td><td>5,0 µg/kg</td><td>Anh. 5 Ziff. 5.2 VVEA</td></tr>
+          <tr><th>U-Wert</th><td style="text-align:left; white-space:normal;">Unverschmutztes Aushub-/Ausbruchmaterial</td><td>0,5 µg/kg</td></tr>
+          <tr><th>T-Wert</th><td style="text-align:left; white-space:normal;">Schwach (tolerierbar) verschmutztes Aushubmaterial – bedingte Verwertung nach Art. 19 Abs. 2 VVEA möglich, ausser bituminös gebundene Baustoffe</td><td>1,5 µg/kg</td></tr>
+          <tr><th>B-Wert</th><td style="text-align:left; white-space:normal;">Material zur Ablagerung auf Deponien des Typs B</td><td>2,5 µg/kg</td></tr>
+          <tr><th>E-Wert</th><td style="text-align:left; white-space:normal;">Material zur Ablagerung auf Deponien des Typs E</td><td>5,0 µg/kg</td></tr>
         </tbody>
       </table>
       <div class="legend-note">Für die Deponietypen A, C und D bestehen aktuell keine publizierten PFAS-Vollzugswerte. Ablagerung jeweils «gemäss kantonalen Vorgaben» im Einzelfall.</div>
@@ -336,18 +335,37 @@
     </div>
 
     <h3 id="vbbo-richtwerte">Richtwerte <span class="small muted">— Vorsorge/Bodenfruchtbarkeit, gilt unabhängig von der Nutzung (0–20 cm)</span></h3>
+    <div class="table-controls cols-control" data-target="richtwerte-table">
+      <div class="control-group">
+        <span class="control-label">Stoffe anzeigen <span class="small muted">(max. 2, zum Vergleichen)</span></span>
+        <div class="chip-toggle" role="group" aria-label="Stoffe auswählen">
+          <button type="button" class="chip active" data-col="chrom">Chrom</button>
+          <button type="button" class="chip active" data-col="nickel">Nickel</button>
+          <button type="button" class="chip" data-col="kupfer">Kupfer</button>
+          <button type="button" class="chip" data-col="zink">Zink</button>
+          <button type="button" class="chip" data-col="molybdaen">Molybdän</button>
+          <button type="button" class="chip" data-col="cadmium">Cadmium</button>
+          <button type="button" class="chip" data-col="quecksilber">Quecksilber</button>
+          <button type="button" class="chip" data-col="blei">Blei</button>
+          <button type="button" class="chip" data-col="fluor">Fluor</button>
+          <button type="button" class="chip" data-col="dioxine">Dioxine/Furane</button>
+          <button type="button" class="chip" data-col="pak">PAK</button>
+          <button type="button" class="chip" data-col="pcb">PCB</button>
+        </div>
+      </div>
+    </div>
     <div class="matrix-scroll">
-      <table class="matrix">
+      <table class="matrix" id="richtwerte-table">
         <thead>
           <tr class="col-row">
             <th class="stoff-head">Boden allgemein</th>
-            <th>Chrom</th><th>Nickel</th><th>Kupfer</th><th>Zink</th><th>Molybdän</th><th>Cadmium</th><th>Quecksilber</th><th>Blei</th><th>Fluor</th><th>Dioxine/<br>Furane/<br>dl-PCB</th><th>PAK<br>Σ16</th><th>PAK<br>BaP</th><th>PCB<br>Σ6</th>
+            <th data-col="chrom">Chrom</th><th data-col="nickel">Nickel</th><th data-col="kupfer">Kupfer</th><th data-col="zink">Zink</th><th data-col="molybdaen">Molybdän</th><th data-col="cadmium">Cadmium</th><th data-col="quecksilber">Quecksilber</th><th data-col="blei">Blei</th><th data-col="fluor">Fluor</th><th data-col="dioxine">Dioxine/<br>Furane/<br>dl-PCB</th><th data-col="pak">PAK<br>Σ16</th><th data-col="pak">PAK<br>BaP</th><th data-col="pcb">PCB<br>Σ6</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th>0–20 cm <span class="small muted">(t / l)</span></th>
-            <td>50 / –</td><td>50 / 0,2</td><td>40 / 0,7</td><td>150 / 0,5</td><td>5 / –</td><td>0,8 / 0,02</td><td>0,5 / –</td><td>50 / –</td><td>700 / 20</td><td>5</td><td>1</td><td>0,2</td><td class="na">–</td>
+            <td data-col="chrom">50 / –</td><td data-col="nickel">50 / 0,2</td><td data-col="kupfer">40 / 0,7</td><td data-col="zink">150 / 0,5</td><td data-col="molybdaen">5 / –</td><td data-col="cadmium">0,8 / 0,02</td><td data-col="quecksilber">0,5 / –</td><td data-col="blei">50 / –</td><td data-col="fluor">700 / 20</td><td data-col="dioxine">5</td><td data-col="pak">1</td><td data-col="pak">0,2</td><td class="na" data-col="pcb">–</td>
           </tr>
         </tbody>
       </table>
@@ -355,36 +373,63 @@
     </div>
 
     <h3 id="vbbo-pruefwerte">Prüfwerte <span class="small muted">— nutzungsspezifische Abklärungspflicht, nach Belastungsfläche</span></h3>
+    <div class="table-controls cols-control" data-target="pruefwerte-table">
+      <div class="control-group">
+        <span class="control-label">Stoffe anzeigen <span class="small muted">(max. 2, zum Vergleichen)</span></span>
+        <div class="chip-toggle" role="group" aria-label="Stoffe auswählen">
+          <button type="button" class="chip active" data-col="blei">Blei</button>
+          <button type="button" class="chip" data-col="cadmium">Cadmium</button>
+          <button type="button" class="chip" data-col="kupfer">Kupfer</button>
+          <button type="button" class="chip active" data-col="dioxine">Dioxine/Furane</button>
+          <button type="button" class="chip" data-col="pak">PAK</button>
+          <button type="button" class="chip" data-col="pcb">PCB</button>
+        </div>
+      </div>
+    </div>
     <div class="matrix-scroll">
-      <table class="matrix">
+      <table class="matrix" id="pruefwerte-table">
         <thead>
           <tr class="col-row">
             <th class="stoff-head">Nutzung / Belastungsfläche</th>
-            <th>Blei<br>(t)</th><th>Cadmium<br>(t)</th><th>Cadmium<br>(l)</th><th>Kupfer<br>(t)</th><th>Kupfer<br>(l)</th><th>Dioxine/<br>Furane/<br>dl-PCB</th><th>PAK<br>Σ16</th><th>PAK<br>BaP</th><th>PCB<br>Σ6</th><th>Tiefe</th>
+            <th data-col="blei">Blei<br>(t)</th><th data-col="cadmium">Cadmium<br>(t)</th><th data-col="cadmium">Cadmium<br>(l)</th><th data-col="kupfer">Kupfer<br>(t)</th><th data-col="kupfer">Kupfer<br>(l)</th><th data-col="dioxine">Dioxine/<br>Furane/<br>dl-PCB</th><th data-col="pak">PAK<br>Σ16</th><th data-col="pak">PAK<br>BaP</th><th data-col="pcb">PCB<br>Σ6</th><th>Tiefe</th>
           </tr>
         </thead>
         <tbody>
-          <tr><th>Nahrungspflanzenanbau</th><td>200</td><td>2</td><td>0,02</td><td class="na">–</td><td class="na">–</td><td>20</td><td>20</td><td>2</td><td>0,2</td><td>0–20 cm</td></tr>
-          <tr><th>Futterpflanzenanbau</th><td>200</td><td>2</td><td>0,02</td><td>150</td><td>0,7</td><td>20</td><td class="na">–</td><td class="na">–</td><td>0,2</td><td>0–20 cm</td></tr>
-          <tr><th>Direkte Bodenaufnahme<sup>1</sup></th><td>300</td><td>10</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>20</td><td>10</td><td>1</td><td>0,1</td><td>0–5 cm</td></tr>
+          <tr><th>Nahrungspflanzenanbau</th><td data-col="blei">200</td><td data-col="cadmium">2</td><td data-col="cadmium">0,02</td><td class="na" data-col="kupfer">–</td><td class="na" data-col="kupfer">–</td><td data-col="dioxine">20</td><td data-col="pak">20</td><td data-col="pak">2</td><td data-col="pcb">0,2</td><td>0–20 cm</td></tr>
+          <tr><th>Futterpflanzenanbau</th><td data-col="blei">200</td><td data-col="cadmium">2</td><td data-col="cadmium">0,02</td><td data-col="kupfer">150</td><td data-col="kupfer">0,7</td><td data-col="dioxine">20</td><td class="na" data-col="pak">–</td><td class="na" data-col="pak">–</td><td data-col="pcb">0,2</td><td>0–20 cm</td></tr>
+          <tr><th>Direkte Bodenaufnahme<sup>1</sup></th><td data-col="blei">300</td><td data-col="cadmium">10</td><td class="na" data-col="cadmium">–</td><td class="na" data-col="kupfer">–</td><td class="na" data-col="kupfer">–</td><td data-col="dioxine">20</td><td data-col="pak">10</td><td data-col="pak">1</td><td data-col="pcb">0,1</td><td>0–5 cm</td></tr>
         </tbody>
       </table>
       <div class="legend-note">1 oral, inhalativ, dermal. t = Totalgehalt, l = löslicher Gehalt. Einheiten: mg/kg TS, Dioxine/Furane/dl-PCB in ng TEQ/kg TS.</div>
     </div>
 
     <h3 id="vbbo-sanierungswerte">Sanierungswerte <span class="small muted">— Nutzungseinschränkung/-verbot, nach Nutzungskategorie</span></h3>
+    <div class="table-controls cols-control" data-target="sanierungswerte-table">
+      <div class="control-group">
+        <span class="control-label">Stoffe anzeigen <span class="small muted">(max. 2, zum Vergleichen)</span></span>
+        <div class="chip-toggle" role="group" aria-label="Stoffe auswählen">
+          <button type="button" class="chip active" data-col="blei">Blei</button>
+          <button type="button" class="chip active" data-col="cadmium">Cadmium</button>
+          <button type="button" class="chip" data-col="kupfer">Kupfer</button>
+          <button type="button" class="chip" data-col="zink">Zink</button>
+          <button type="button" class="chip" data-col="dioxine">Dioxine/Furane</button>
+          <button type="button" class="chip" data-col="pak">PAK</button>
+          <button type="button" class="chip" data-col="pcb">PCB</button>
+        </div>
+      </div>
+    </div>
     <div class="matrix-scroll">
-      <table class="matrix">
+      <table class="matrix" id="sanierungswerte-table">
         <thead>
           <tr class="col-row">
             <th class="stoff-head">Nutzungskategorie</th>
-            <th>Blei</th><th>Cadmium</th><th>Kupfer</th><th>Zink</th><th>Dioxine/<br>Furane/<br>dl-PCB</th><th>PAK<br>Σ16</th><th>PAK<br>BaP</th><th>PCB<br>Σ6</th><th>Tiefe</th>
+            <th data-col="blei">Blei</th><th data-col="cadmium">Cadmium</th><th data-col="kupfer">Kupfer</th><th data-col="zink">Zink</th><th data-col="dioxine">Dioxine/<br>Furane/<br>dl-PCB</th><th data-col="pak">PAK<br>Σ16</th><th data-col="pak">PAK<br>BaP</th><th data-col="pcb">PCB<br>Σ6</th><th>Tiefe</th>
           </tr>
         </thead>
         <tbody>
-          <tr><th>Landwirtschaft &amp; Gartenbau</th><td>2 000</td><td>30</td><td>1 000</td><td>2 000</td><td>1 000</td><td class="na">–</td><td class="na">–</td><td>3</td><td>0–20 cm</td></tr>
-          <tr><th>Haus- &amp; Familiengärten</th><td>1 000</td><td>20</td><td>1 000</td><td>2 000</td><td>100</td><td>100</td><td>10</td><td>1</td><td>0–20 cm</td></tr>
-          <tr><th>Kinderspielplätze</th><td>1 000</td><td>20</td><td class="na">–</td><td class="na">–</td><td>100</td><td>100</td><td>10</td><td>1</td><td>0–5 cm</td></tr>
+          <tr><th>Landwirtschaft &amp; Gartenbau</th><td data-col="blei">2 000</td><td data-col="cadmium">30</td><td data-col="kupfer">1 000</td><td data-col="zink">2 000</td><td data-col="dioxine">1 000</td><td class="na" data-col="pak">–</td><td class="na" data-col="pak">–</td><td data-col="pcb">3</td><td>0–20 cm</td></tr>
+          <tr><th>Haus- &amp; Familiengärten</th><td data-col="blei">1 000</td><td data-col="cadmium">20</td><td data-col="kupfer">1 000</td><td data-col="zink">2 000</td><td data-col="dioxine">100</td><td data-col="pak">100</td><td data-col="pak">10</td><td data-col="pcb">1</td><td>0–20 cm</td></tr>
+          <tr><th>Kinderspielplätze</th><td data-col="blei">1 000</td><td data-col="cadmium">20</td><td class="na" data-col="kupfer">–</td><td class="na" data-col="zink">–</td><td data-col="dioxine">100</td><td data-col="pak">100</td><td data-col="pak">10</td><td data-col="pcb">1</td><td>0–5 cm</td></tr>
         </tbody>
       </table>
       <div class="legend-note">Totalgehalt (t) in mg/kg TS, Dioxine/Furane/dl-PCB in ng TEQ/kg TS. Zusätzlich gelten lösliche Grenzwerte für Landwirtschaft/Gärten (Cadmium 0,1 mg/kg; Kupfer 4 mg/kg; Zink 5 mg/kg) – siehe VBBo Anhang 1 Ziff. 13.</div>

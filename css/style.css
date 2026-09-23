@@ -853,7 +853,16 @@ footer.site-footer .disclaimer {
   }
 
   table.matrix th, table.matrix td {
-    padding: 5px 6px;
+    padding: 5px 4px;
+    font-size: 0.78rem;
+  }
+
+  /* "Tiefe"-Spalte (immer letzte Spalte bei Prüf-/Sanierungswerten) ist auf
+     Mobile entbehrlich und wird bei ungünstigen Stoff-Kombinationen sonst
+     zum Overflow-Treiber */
+  #pruefwerte-table th:last-child, #pruefwerte-table td:last-child,
+  #sanierungswerte-table th:last-child, #sanierungswerte-table td:last-child {
+    display: none;
   }
 
   table.matrix th[data-col],
