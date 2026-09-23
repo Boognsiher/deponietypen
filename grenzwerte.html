@@ -77,11 +77,12 @@
       <span><span class="dot c"></span>Typ C</span>
       <span><span class="dot d"></span>Typ D</span>
       <span><span class="dot e"></span>Typ E</span>
+      <span class="unit-tag">Einheit: mg/kg Trockensubstanz (TS)</span>
     </div>
 
     <div class="matrix-scroll">
       <table class="matrix">
-        <caption>mg/kg Trockensubstanz (Gesamtgehalt), sofern nicht anders vermerkt</caption>
+        <caption>Gesamtgehalte in mg/kg Trockensubstanz (TS), sofern nicht anders vermerkt</caption>
         <thead>
           <tr class="group-row">
             <th class="stoff-head"></th>
@@ -92,7 +93,7 @@
             <th class="head-e">Anh. 5</th>
           </tr>
           <tr class="col-row">
-            <th class="stoff-head">Stoff</th>
+            <th class="stoff-head">Stoff <span class="small muted">(mg/kg TS)</span></th>
             <th class="head-aushub">unbelastet<br><span class="small muted">Ziff. 1</span></th>
             <th class="head-aushub">schwach belastet<br><span class="small muted">Ziff. 2</span></th>
             <th class="head-b">Typ B<br><span class="small muted">Ziff. 2.3</span></th>
@@ -221,7 +222,7 @@
 
     <div class="mini-grid">
       <div class="mini-card" data-typ="Boden">
-        <h4>Anorganisch – Richtwerte <span class="small muted">total / löslich</span></h4>
+        <h4>Anorganisch – Richtwerte <span class="small muted">mg/kg TS, total / löslich</span></h4>
         <table>
           <tbody>
             <tr><th>Chrom</th><td>50 / –</td></tr>
@@ -233,28 +234,6 @@
             <tr><th>Quecksilber</th><td>0,5 / –</td></tr>
             <tr><th>Blei</th><td>50 / –</td></tr>
             <tr><th>Fluor</th><td>700 / 20</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mini-card" data-typ="Boden">
-        <h4>Anorganisch – Prüfwerte <span class="small muted">Pb / Cd / Cu (t=total, l=löslich)</span></h4>
-        <table>
-          <tbody>
-            <tr><th>Nahrungspflanzen (0–20cm)</th><td>Pb 200 · Cd 2/0,02</td></tr>
-            <tr><th>Futterpflanzen (0–20cm)</th><td>Pb 200 · Cd 2/0,02 · Cu 150/0,7</td></tr>
-            <tr><th>Direkte Bodenaufnahme (0–5cm)</th><td>Pb 300 · Cd 10</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mini-card" data-typ="Boden">
-        <h4>Anorganisch – Sanierungswerte <span class="small muted">Pb / Cd / Cu / Zn (total)</span></h4>
-        <table>
-          <tbody>
-            <tr><th>Landwirtschaft/Gartenbau</th><td>2 000 / 30 / 1 000 / 2 000</td></tr>
-            <tr><th>Haus-/Familiengärten</th><td>1 000 / 20 / 1 000 / 2 000</td></tr>
-            <tr><th>Kinderspielplätze (0–5cm)</th><td>1 000 / 20 / – / –</td></tr>
           </tbody>
         </table>
       </div>
@@ -273,27 +252,47 @@
       </div>
 
       <div class="mini-card" data-typ="Boden">
-        <h4>PAK <span class="small muted">Σ16 / Benzo[a]pyren, mg/kg TS</span></h4>
-        <table>
+        <h4>PAK &amp; PCB <span class="small muted">mg/kg TS</span></h4>
+        <table class="cols">
+          <thead><tr><th></th><th>PAK Σ16</th><th>PAK BaP</th><th>PCB Σ6</th></tr></thead>
           <tbody>
-            <tr><th>Richtwert (0–20cm)</th><td>1 / 0,2</td></tr>
-            <tr><th>Prüfwert direkt (0–5cm)</th><td>10 / 1</td></tr>
-            <tr><th>Prüfwert Pflanzen (0–20cm)</th><td>20 / 2</td></tr>
-            <tr><th>Sanierung Spielpl./Gärten</th><td>100 / 10</td></tr>
+            <tr><th>Richtwert (0–20cm)</th><td>1</td><td>0,2</td><td>–</td></tr>
+            <tr><th>Prüfwert, direkt (0–5cm)</th><td>10</td><td>1</td><td>0,1</td></tr>
+            <tr><th>Prüfwert, Pflanzen (0–20cm)</th><td>20</td><td>2</td><td>0,2</td></tr>
+            <tr><th>Sanierung Spielpl./Gärten</th><td>100</td><td>10</td><td>1</td></tr>
+            <tr><th>Sanierung Landwirtschaft</th><td>–</td><td>–</td><td>3</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="mini-card" data-typ="Boden">
-        <h4>PCB <span class="small muted">Σ6 Kongenere, mg/kg TS</span></h4>
-        <table>
+      <div class="mini-card wide" data-typ="Boden">
+        <h4>Anorganisch – Prüfwerte <span class="small muted">mg/kg TS, t = Totalgehalt, l = löslicher Gehalt</span></h4>
+        <table class="cols">
+          <thead>
+            <tr><th>Nutzung</th><th>Blei (t)</th><th>Cadmium (t)</th><th>Cadmium (l)</th><th>Kupfer (t)</th><th>Kupfer (l)</th><th>Tiefe</th></tr>
+          </thead>
           <tbody>
-            <tr><th>Prüfwert direkt (0–5cm)</th><td>0,1</td></tr>
-            <tr><th>Prüfwert Pflanzen (0–20cm)</th><td>0,2</td></tr>
-            <tr><th>Sanierung Spielpl./Gärten</th><td>1</td></tr>
-            <tr><th>Sanierung Landwirtschaft</th><td>3</td></tr>
+            <tr><th>Nahrungspflanzenanbau</th><td>200</td><td>2</td><td>0,02</td><td>–</td><td>–</td><td>0–20 cm</td></tr>
+            <tr><th>Futterpflanzenanbau</th><td>200</td><td>2</td><td>0,02</td><td>150</td><td>0,7</td><td>0–20 cm</td></tr>
+            <tr><th>Direkte Bodenaufnahme<sup>1</sup></th><td>300</td><td>10</td><td>–</td><td>–</td><td>–</td><td>0–5 cm</td></tr>
           </tbody>
         </table>
+        <p class="small muted" style="margin:8px 0 0;">1 oral, inhalativ, dermal.</p>
+      </div>
+
+      <div class="mini-card wide" data-typ="Boden">
+        <h4>Anorganisch – Sanierungswerte <span class="small muted">mg/kg TS, Totalgehalt</span></h4>
+        <table class="cols">
+          <thead>
+            <tr><th>Nutzungskategorie</th><th>Blei</th><th>Cadmium</th><th>Kupfer</th><th>Zink</th><th>Tiefe</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Landwirtschaft &amp; Gartenbau</th><td>2 000</td><td>30</td><td>1 000</td><td>2 000</td><td>0–20 cm</td></tr>
+            <tr><th>Haus- &amp; Familiengärten</th><td>1 000</td><td>20</td><td>1 000</td><td>2 000</td><td>0–20 cm</td></tr>
+            <tr><th>Kinderspielplätze</th><td>1 000</td><td>20</td><td>–</td><td>–</td><td>0–5 cm</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted" style="margin:8px 0 0;">Zusätzlich gelten lösliche Grenzwerte (Cd 0,1 mg/kg; Cu 4 mg/kg; Zn 5 mg/kg für Landwirtschaft/Gärten) – siehe VBBo Anhang 1 Ziff. 13.</p>
       </div>
     </div>
   </section>

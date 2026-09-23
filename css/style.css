@@ -428,6 +428,14 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .typ-legend .dot.d { background: var(--typ-d); }
 .typ-legend .dot.e { background: var(--typ-e); }
 
+.typ-legend .unit-tag {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--brand-dark);
+  background: var(--accent-tint);
+  border-color: #e2d3ae;
+}
+
 /* Matrix-Tabelle: alle Stoffe x alle Typen, kompakt & farblich unterlegt */
 
 .matrix-scroll {
@@ -538,6 +546,37 @@ table.matrix tbody tr:nth-child(even) td.cell-aushub { background: #ebe8dc; }
 .mini-card[data-typ="E"] { border-top-color: var(--typ-e); }
 .mini-card[data-typ="Boden"] { border-top-color: var(--brand); }
 .mini-card[data-typ="Wasser"] { border-top-color: var(--accent); }
+
+.mini-card.wide { grid-column: 1 / -1; }
+
+.mini-card table.cols {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mini-card table.cols th, .mini-card table.cols td {
+  padding: 6px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+  font-size: 0.78rem;
+}
+
+.mini-card table.cols thead th {
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+  font-weight: 700;
+  white-space: normal;
+}
+
+.mini-card table.cols tbody th {
+  text-align: left;
+  font-weight: 500;
+  white-space: normal;
+}
+
+.mini-card table.cols tbody tr:nth-child(even) { background: #fbfaf7; }
+.mini-card table.cols tbody tr:last-child th, .mini-card table.cols tbody tr:last-child td { border-bottom: none; }
 
 .mini-card h4 {
   margin: 0 0 8px;
